@@ -2,7 +2,9 @@ import React from 'react';
 
 class RefundTitle extends React.Component {
   render() {
-    return 
+    return (
+      <div></div>
+    )
   }
 }
 
