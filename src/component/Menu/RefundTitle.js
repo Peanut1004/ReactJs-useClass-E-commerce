@@ -3,7 +3,11 @@ import React from 'react';
 class RefundTitle extends React.Component {
   render() {
     return (
-      <div></div>
+      <div>
+        {this.props.types.map((el, index) => (
+          <div key={index}>{el.title}</div>
+        ))}
+      </div>
     )
   }
 }

@@ -1,3 +1,4 @@
+/*Header*/
 .header {
   padding: 10px;
   display: flex;
@@ -16,6 +17,16 @@
   font-weight: bold;
 }
 
+/*Main*/
+.main {
+  padding: 0 10px 10px 280px;
+}
+
+.results-top {
+  display: flex;
+  justify-content: space-between;
+}
+
 aside {
   position: fixed;
   overflow-y: auto;
@@ -26,4 +37,37 @@ aside {
   padding: 20px;
   border-right: 1px solid #EEE;
   background: #FFFFFF;
+}
+
+.products li a {
+  color: #000;
+}
+
+.sort-by {
+  display: flex;
+}
+
+.sort-by label {
+  margin-right: 10px;
+}
+
+.item-box-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-box {
+  width: 291px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #f1f1f1;
+}
+
+.item-box h3 {
+  font-size: 14px;
+}
+
+.item-box-bottom {
+  display: flex;
+  justify-content: space-between;
 }
