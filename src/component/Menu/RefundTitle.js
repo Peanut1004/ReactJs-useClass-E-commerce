@@ -3,11 +3,16 @@ import React from 'react';
 class RefundTitle extends React.Component {
   render() {
     return (
-      <div>
+      <ul>
         {this.props.types.map((el, index) => (
-          <div key={index}>{el.title}</div>
+          <li 
+          key={index}
+          onClick={() => this.props.handleTitle(el.title)}
+          >
+            {el.title}
+          </li>
         ))}
-      </div>
+      </ul>
     )
   }
 }

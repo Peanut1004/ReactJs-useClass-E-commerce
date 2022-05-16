@@ -1,12 +1,12 @@
 import React from 'react'
 
 class ResultTop extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      time: Date.now(),
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     time: Date.now(),
+  //   }
+  // }
   render() {
     return (
       <div className="results-top">

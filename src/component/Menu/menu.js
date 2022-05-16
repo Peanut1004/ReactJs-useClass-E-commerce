@@ -20,11 +20,10 @@ class Menu extends React.Component {
     return (
       <aside>
         <p>Show results for</p>
-        {/* {this.state.types} */}
         <div id=""></div>
 
         <p>Refine by</p>
-        <RefundTitle types={this.state.types}/>
+        <RefundTitle handleTitle={this.props.handleTitle} types={this.state.types}/>
         
         <p>Brand</p>
 
