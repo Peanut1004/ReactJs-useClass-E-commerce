@@ -10,13 +10,16 @@ class RefundTitle extends React.Component {
   handleToggle(id, title, subs) {
     this.props.handleIdTitle(id);
     this.props.handleTitle(title);
-    this.props.handleType((subs = ''));
-
+    if(this.props.valueType) {
+      this.props.handleType('');
+    }
+    
   }
 
-  handleToggleSub(id, type) {
+  handleToggleSub(id, type, typeMain) {
     this.props.handleType(type);
-    this.props.handleIdType(id);
+    this.props.handleIdType(id);  
+    
   }
 
   render() {

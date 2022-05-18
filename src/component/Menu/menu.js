@@ -22,8 +22,12 @@ class Menu extends React.Component {
     return (
       <aside>
         <p>Show results for</p>
-        <div id=""></div>
-
+        {this.props.sort || 
+        this.props.valueRatings ||
+        this.props.valuePriceStart ||
+        this.props.valuePriceStart 
+        ? <div className='clear-all' onClick={() => this.props.handleClearAll()}>Clear Filter All</div> : ''}
+        
         <p>Refine by</p>
         <RefundTitle
           types={this.state.types}
@@ -33,7 +37,7 @@ class Menu extends React.Component {
           valueTitle={this.props.valueTitle}
           handleType={this.props.handleType}
           handleIdType={this.props.handleIdType}
-          
+          valueType={this.props.valueType}
         />
         
         <p>Brand</p>

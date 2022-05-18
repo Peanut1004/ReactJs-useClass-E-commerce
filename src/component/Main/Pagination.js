@@ -16,14 +16,13 @@ class Pagination extends React.Component {
     for(let i = 1; i <= totalPages; i++) {
       pages.push(i)
     }
-    console.log(this.props.currentPage - 1)
     return (
       <div className='pagination'>
         <ul>
           <li>
             <button 
               disabled={this.props.currentPage <= 1}
-              // onClick={this.handlePage()}
+              onClick={() => this.handlePage(this.props.currentPage - 1)}
             >
               <i className="fa fa-angle-left"></i> Previous page
             </button>
@@ -34,7 +33,7 @@ class Pagination extends React.Component {
           <li>
             <button 
               disabled={this.props.currentPage >= totalPages}
-              // onClick={this.handlePage()}
+              onClick={() => this.handlePage(this.props.currentPage + 1)}
             >
               Next page <i className="fa fa-angle-right"></i>
             </button>

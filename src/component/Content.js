@@ -17,6 +17,7 @@ class Content extends React.Component {
     this.handlePriceStart = this.handlePriceStart.bind(this)
     this.handlePriceEnd = this.handlePriceEnd.bind(this)
     this.handleProductLi = this.handleProductLi.bind(this)
+    this.handleClearAll = this.handleClearAll.bind(this)
 
     this.state = {
       products: [],
@@ -51,10 +52,11 @@ class Content extends React.Component {
 
     if(this.state.valueTitle) {
       url += `&title=${this.state.valueTitle}`
+      console.log(url)
     }
 
     if(this.state.valueType) {
-      url += `&type=${this.state.valueType}`
+      url += `&type=${this.state.valueType}`;
     }
 
     if(this.state.valuePriceStart) {
@@ -86,7 +88,8 @@ class Content extends React.Component {
 
   // Title
   async handleTitle(title) {
-    await this.setState({valueTitle: title})
+    await this.setState(() => ({valueTitle: title}))
+    console.log(this.state.valueTitle)
     this.handleFetchData()
   }
 
@@ -97,6 +100,8 @@ class Content extends React.Component {
   //Type 
   async handleType(type) {
     await this.setState({valueType: type})
+    // console.log(this.state.valueType)
+    this.handleFetchData()
   }
 
   async handleIdType(type) {
@@ -120,8 +125,18 @@ class Content extends React.Component {
     this.handleFetchData()
   }
 
+  //handleProductLimit
   async handleProductLi(value) {
     await this.setState({currentPage: value})
+  }
+
+  //handleClearAll
+  async handleClearAll() {
+    await this.setState({sort: ''});
+    await this.setState({valueRatings: ''});
+    await this.setState({valuePriceStart: ''})
+    await this.setState({valuePriceEnd: ''})
+    // this.handleFetchData();
   }
   
   componentDidMount() {
@@ -142,16 +157,22 @@ class Content extends React.Component {
       <div >
         <Header handleSearch={this.handleSearch}/>
         <div className='main'>
-          <Menu 
-            handleRatings={this.handleRatings}
+          <Menu
+            sort={this.state.sort}
             handleTitle={this.handleTitle}
             handleIdTitle={this.handleIdTitle}
             valueIdTitle={this.state.valueIdTitle}
             valueTitle={this.state.valueTitle}
             handleIdType={this.handleIdType}
             handleType={this.handleType}
+            valueType={this.state.valueType}
+            handleRatings={this.handleRatings}
+            valueRatings={this.state.valueRatings}
+            valuePriceStart={this.state.valuePriceStart}
+            valuePriceEnd={this.state.valuePriceEnd}
             handlePriceStart={this.handlePriceStart}
             handlePriceEnd={this.handlePriceEnd}
+            handleClearAll={this.handleClearAll}
           />
           <Main 
             products={row}
@@ -168,20 +189,3 @@ class Content extends React.Component {
 }
 
 export default Content
-
-
-
-
-
-
-
-
-//   render() {
-//     return (
-//       <div className='main'>
-//         <ResultTop products={this.props.products} handleSort={this.props.handleSort}/>
-//         <Products products={this.props.products}/>
-//       </div>
-//     )
-//   }
-// } 
