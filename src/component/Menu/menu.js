@@ -25,7 +25,7 @@ class Menu extends React.Component {
         <div id=""></div>
 
         <p>Refine by</p>
-        <RefundTitle
+        {/* <RefundTitle
           types={this.state.types}
           valueTitle={this.props.valueTitle}
           handleTitle={this.props.handleTitle} 
@@ -42,7 +42,7 @@ class Menu extends React.Component {
         <RefundRating handleRating={this.props.handleRating}/>
 
         <p>Prices</p>
-        <RefundPrice handlePrice={this.props.handlePrice}/>
+        <RefundPrice handlePrice={this.props.handlePrice}/> */}
 
         <h5>Data courtesy of Best Buy</h5>
       </aside>

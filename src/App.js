@@ -1,12 +1,19 @@
 
 import React from 'react'
 import './App.css'
-import Content from './component/Content';
+import Header from './component/Header';
+import Main from './component/Main/Main.js';
+import Menu from './component/Menu/Menu.js'
 
 class App extends React.Component {
   render() {
     return(
-      <Content />
+      <div>
+        <Header />
+        <Menu />
+        <Main />
+      </div>
+      
     )
   }
 }
