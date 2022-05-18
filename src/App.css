@@ -1,3 +1,12 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style-type: none;
+}
+
 /*Header*/
 .header {
   padding: 10px;
@@ -74,4 +83,35 @@ aside {
 
 .refund-title ul li.active a {
   font-weight: 600;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.pagination ul li {
+  display: inline-block;
+}
+
+.pagination ul li.number {
+  padding: 2px 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: 1px solid #5c4545;
+}
+
+.form-input {
+  margin-top: 20px;
+}
+
+.form-input input {
+  width: 30px;
+}
+
+aside p {
+  font-weight: 700;
+}
+
+.refund-title ul li ul {
+  padding-left: 20px;
 }

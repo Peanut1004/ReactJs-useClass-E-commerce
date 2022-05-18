@@ -4,7 +4,7 @@ class ResultTop extends React.Component {
   render() {
     return (
       <div className="results-top">
-        <span>{this.props.products.length} results found</span>
+        <span>{this.props.productsLength.length} results found</span>
         <div className="sort-by">
           <label>Sort by</label>
           <div className="sort-by-selector">
